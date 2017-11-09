@@ -1,0 +1,10 @@
+mvn archetype:generate \
+   -DarchetypeGroupId=fr.univtln.bruno.archetype \
+   -DarchetypeArtifactId=javaSimpleArchetype \
+   -DarchetypeVersion=0.1.0-develop-6 \
+   -DgroupId=fr.univtln.lducarre365.infoCity \
+   -DartifactId=infoCity_server \
+   -Dversion=1.0-SNAPSHOT \
+   -DprojectShortName=infoCity_server \
+   -DgithubAccount=ludovicducarre \
+   -DUtlnEmail=ludovic-ducarre@etud.univ-tln.fr
