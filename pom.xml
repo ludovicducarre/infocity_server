@@ -9,7 +9,10 @@
         <!-- utln login for nexus (maven and docker ) repository on lsis -->
         <lsisnexus.login>ludovic-ducarre@etud.univ-tln.fr</lsisnexus.login>
         <!-- the default Main class -->
-        <app.main.class>fr.univtln.lducarre365.infoCity.App</app.main.class>
+        <app.main.class>EJBs.AdvertManager</app.main.class>
+
+        <jersey-version>1.19</jersey-version>
+        <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
     </properties>
     <!-- ADAPTER LES PROPRIETES SUIVANTES -->
 
@@ -44,7 +47,7 @@
     <groupId>fr.univtln.lducarre365.infoCity</groupId>
     <artifactId>infoCity_server</artifactId>
     <version>1.0-premiers___ejb-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <!-- ADAPTER les coordonnées -->
 
     <!-- ADAPTER les métadonnées -->
@@ -135,6 +138,38 @@
             <artifactId>jersey-container-grizzly2-http</artifactId>
             <version>2.25</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.ejb</artifactId>
+            <version>3.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-servlet</artifactId>
+            <version>${jersey-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-json</artifactId>
+            <version>${jersey-version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>fr.univtln.lducarre365.infoCity</groupId>
+            <artifactId>infoCity_model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-multipart</artifactId>
+            <version>${jersey-version}</version>
+        </dependency>
+
 
     </dependencies>
 </project>

@@ -1,4 +1,3 @@
-package fr.univtln.lducarre365.infoCity;
 
 import org.junit.jupiter.api.*;
 
