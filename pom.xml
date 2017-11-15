@@ -13,10 +13,17 @@
 
         <jersey-version>1.19</jersey-version>
         <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
+        <primefaces.version>5.0</primefaces.version>
     </properties>
     <!-- ADAPTER LES PROPRIETES SUIVANTES -->
 
     <repositories>
+        <repository>
+            <id>prime-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+        </repository>
+
         <repository>
             <snapshots>
                 <enabled>false</enabled>
@@ -83,17 +90,17 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
                 <configuration>
-                    <filters>
-                        <filter>
-                            <artifact>fr.univtln.bruno.test.helloworld:app</artifact>
-                            <includes>
-                                <include>**</include>
-                            </includes>
-                        </filter>
-                    </filters>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
@@ -170,6 +177,18 @@
             <version>${jersey-version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${primefaces.version}</version>
+        </dependency>
 
     </dependencies>
 </project>
