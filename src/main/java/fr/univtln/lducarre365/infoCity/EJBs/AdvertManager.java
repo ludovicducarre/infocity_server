@@ -1,5 +1,6 @@
-package EJBs;
-import business.Advert;
+package fr.univtln.lducarre365.infoCity.EJBs;
+
+import fr.univtln.lducarre365.infoCity.business.Advert;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;

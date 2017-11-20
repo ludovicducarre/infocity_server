@@ -1,6 +1,6 @@
-package EJBs;
+package fr.univtln.lducarre365.infoCity.EJBs;
 
-import business.Advert;
+import fr.univtln.lducarre365.infoCity.business.Advert;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -14,7 +14,8 @@ import javax.ws.rs.Produces;
 @Path("/advert")
 @Stateless
 public class AdvertEJB {
-    @Inject Advert advert;
+    @Inject
+    Advert advert;
 
     @GET
     @Produces("text/plain")
