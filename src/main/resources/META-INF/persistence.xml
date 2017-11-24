@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <persistence-unit name="infocityPersistence" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>jdbc/postgres-pool</jta-data-source>
+        <class>fr.univtln.lducarre365.infoCity.business.Advert</class>
+        <class>fr.univtln.lducarre365.infoCity.business.User</class>
+        <class>fr.univtln.lducarre365.infoCity.business.Town</class>
+
+        <properties>
+
+            <!-- Les options de générations des tables -->
+            <!--<property name="eclipselink.ddl-generation.output-mode" value="both"/>-->
+            <!--<property name="eclipselink.ddl-generation" value="create-tables"/>-->
+            <!--<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>-->
+            <!-- et des scripts SQL -->
+            <!--<property name="eclipselink.create-ddl-jdbc-file-name" value="createDDL_ddlGeneration.sql"/>-->
+            <!--<property name="eclipselink.drop-ddl-jdbc-file-name" value="dropDDL_ddlGeneration.sql"/>-->
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+        </properties>
+    </persistence-unit>
+</persistence>
