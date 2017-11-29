@@ -2,7 +2,6 @@ package fr.univtln.lducarre365.infoCity.EJBs;
 
 import fr.univtln.lducarre365.infoCity.business.Advert;
 import fr.univtln.lducarre365.infoCity.business.Town;
-import fr.univtln.lducarre365.infoCity.crud.CrudServiceBean;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
