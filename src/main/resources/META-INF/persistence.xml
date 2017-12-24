@@ -12,13 +12,6 @@
         <class>fr.univtln.lducarre365.infoCity.business.Town</class>
 
         <properties>
-            <!-- Les options de générations des tables -->
-            <!--<property name="eclipselink.ddl-generation.output-mode" value="both"/>-->
-            <!--<property name="eclipselink.ddl-generation" value="create-tables"/>-->
-            <!--<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>-->
-            <!-- et des scripts SQL -->
-            <!--<property name="eclipselink.create-ddl-jdbc-file-name" value="createDDL_ddlGeneration.sql"/>-->
-            <!--<property name="eclipselink.drop-ddl-jdbc-file-name" value="dropDDL_ddlGeneration.sql"/>-->
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
         </properties>
     </persistence-unit>
