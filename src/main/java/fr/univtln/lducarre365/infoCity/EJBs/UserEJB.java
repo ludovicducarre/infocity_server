@@ -26,7 +26,7 @@ public class UserEJB {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public User getUser(){
-        user.setId(1);
+        //user.setId(1);
         long id =1;
         this.em.persist(user);
         return em.find(User.class,id);
