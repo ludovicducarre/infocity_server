@@ -1,23 +1,16 @@
-package fr.univtln.lducarre365.infoCity.EJBs;
+package fr.univtln.lducarre365.infoCity.RestEJBs;
 
-import com.google.gson.Gson;
 import fr.univtln.lducarre365.infoCity.business.Advert;
 import fr.univtln.lducarre365.infoCity.business.Town;
-import utils.GsonSingleton;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.json.Json;
-import javax.json.JsonObject;
-import javax.json.JsonReader;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.StringReader;
 import java.util.List;
 import java.util.logging.Logger;
 

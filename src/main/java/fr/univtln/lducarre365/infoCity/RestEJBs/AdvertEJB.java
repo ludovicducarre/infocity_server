@@ -1,4 +1,4 @@
-package fr.univtln.lducarre365.infoCity.EJBs;
+package fr.univtln.lducarre365.infoCity.RestEJBs;
 
 import fr.univtln.lducarre365.infoCity.business.Advert;
 
