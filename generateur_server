@@ -8,3 +8,21 @@ mvn archetype:generate \
    -DprojectShortName=infoCity_server \
    -DgithubAccount=ludovicducarre \
    -DUtlnEmail=ludovic-ducarre@etud.univ-tln.fr
+
+
+
+docker-compose exec payara-full /opt/payara41/bin/asadmin \
+    --user admin \
+    --passwordfile=/opt/pwdfile \
+    create-jdbc-connection-pool \
+      --datasourceclassname org.postgresql.ds.PGConnectionPoolDataSource \
+      --restype javax.sql.ConnectionPoolDataSource \
+      --property portNumber=5432:password=glassfishdbpassword:user=glassfish:serverName=db:databaseName=glassfish \
+      postgres-pool
+
+ docker-compose exec payara-full /opt/payara41/bin/asadmin \
+    --user admin \
+    --passwordfile=/opt/pwdfile \
+    create-jdbc-resource \
+      --connectionpoolid postgres-pool \
+      jdbc/postgres-pool

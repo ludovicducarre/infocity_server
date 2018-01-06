@@ -57,7 +57,7 @@ fabric.properties
 
 *.iml
 modules.xml
-.idea/misc.xml
+.idea
 *.ipr
 
 ### Java ###
@@ -113,3 +113,5 @@ Temporary Items
 .apdisk
 
 # End of https://www.gitignore.io/api/java,macos,intellij+iml
+
+target/*

@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <!-- ADAPTER LES PROPRIETES SUIVANTES -->
@@ -10,7 +9,11 @@
         <!-- utln login for nexus (maven and docker ) repository on lsis -->
         <lsisnexus.login>ludovic-ducarre@etud.univ-tln.fr</lsisnexus.login>
         <!-- the default Main class -->
-        <app.main.class>fr.univtln.lducarre365.infoCity.App</app.main.class>
+        <app.main.class>fr.univtln.lducarre365.infoCity.JSFBeans.ChangeOrAddAdvert</app.main.class>
+
+        <jersey-version>1.19</jersey-version>
+        <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
+        <primefaces.version>5.3</primefaces.version>
     </properties>
     <!-- ADAPTER LES PROPRIETES SUIVANTES -->
 
@@ -44,13 +47,13 @@
     <!-- ADAPTER les coordonnées -->
     <groupId>fr.univtln.lducarre365.infoCity</groupId>
     <artifactId>infoCity_server</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <version>1.0</version>
+    <packaging>war</packaging>
     <!-- ADAPTER les coordonnées -->
 
     <!-- ADAPTER les métadonnées -->
     <name>infoCity_server</name>
-    <description></description>
+    <description />
     <url>https://${github.account}.github.io/infoCity_server/</url>
     <inceptionYear>2017</inceptionYear>
 
@@ -81,17 +84,17 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
                 <configuration>
-                    <filters>
-                        <filter>
-                            <artifact>fr.univtln.bruno.test.helloworld:app</artifact>
-                            <includes>
-                                <include>**</include>
-                            </includes>
-                        </filter>
-                    </filters>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
@@ -137,5 +140,59 @@
             <version>2.25</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.ejb</artifactId>
+            <version>3.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-servlet</artifactId>
+            <version>${jersey-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-json</artifactId>
+            <version>${jersey-version}</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>fr.univtln.lducarre365.infoCity</groupId>-->
+            <!--<artifactId>infoCity_model</artifactId>-->
+            <!--<version>1.0</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>fr.univtln.lducarre365.infoCity</groupId>
+            <artifactId>infoCity_model</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>eclipselink</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-multipart</artifactId>
+            <version>${jersey-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${primefaces.version}</version>
+        </dependency>
     </dependencies>
 </project>
