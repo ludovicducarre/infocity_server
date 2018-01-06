@@ -20,20 +20,22 @@
         <div id="wrapper">
 
             <div class="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all"
-                 style="height: 80px; margin-bottom: 2px;">
-                <h1>#{msg['body.title']}</h1>
+                 style="height: 70px; margin-bottom: 2px;">
+                <h2 style="text-align: center">Événements à #{mainPage.townName}</h2>
             </div>
             <div class="ui-panel ui-widget ui-widget-content ui-corner-all"
                  style="margin-bottom: 3px; min-height: 500px;">
 
                 <h:form>
                     <p:toolbar>
-                        <p:toolbarGroup align="left">
+                        <f:facet name="left">
                             <p:commandButton ajax="false" value="Home" icon="ui-icon-home"
-                                             action="mainPage.jsf?faces-redirect=true"/>
-                            <p:commandButton ajax="false" value="Nouvelle annonce" icon="far fa-plus-square"
-                                             action="changeOrAddAdvert.jsf?faces-redirect=true"/>
-                        </p:toolbarGroup>
+                                             action="mainPage?faces-redirect=true"/>
+                        </f:facet>
+                        <f:facet name="right">
+                            <p:commandButton ajax="false" value="Stats" icon="ui-icon-signal"
+                                             action="stats?faces-redirect=true"/>
+                        </f:facet>
 
                     </p:toolbar>
                 </h:form>

@@ -9,21 +9,15 @@
         <!-- utln login for nexus (maven and docker ) repository on lsis -->
         <lsisnexus.login>ludovic-ducarre@etud.univ-tln.fr</lsisnexus.login>
         <!-- the default Main class -->
-        <app.main.class>fr.univtln.lducarre365.infoCity.JSFBeans.AdvertManager</app.main.class>
+        <app.main.class>fr.univtln.lducarre365.infoCity.JSFBeans.ChangeOrAddAdvert</app.main.class>
 
         <jersey-version>1.19</jersey-version>
         <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
-        <primefaces.version>5.0</primefaces.version>
+        <primefaces.version>5.3</primefaces.version>
     </properties>
     <!-- ADAPTER LES PROPRIETES SUIVANTES -->
 
     <repositories>
-        <repository>
-            <id>prime-repo</id>
-            <name>PrimeFaces Maven Repository</name>
-            <url>http://repository.primefaces.org</url>
-        </repository>
-
         <repository>
             <snapshots>
                 <enabled>false</enabled>
@@ -164,11 +158,6 @@
             <version>${jersey-version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.0</version>
-        </dependency>
         <!--<dependency>-->
             <!--<groupId>fr.univtln.lducarre365.infoCity</groupId>-->
             <!--<artifactId>infoCity_model</artifactId>-->
@@ -178,7 +167,7 @@
         <dependency>
             <groupId>fr.univtln.lducarre365.infoCity</groupId>
             <artifactId>infoCity_model</artifactId>
-            <version>1.0</version>
+            <version>1.2</version>
         </dependency>
 
         <dependency>
@@ -205,6 +194,5 @@
             <artifactId>primefaces</artifactId>
             <version>${primefaces.version}</version>
         </dependency>
-
     </dependencies>
 </project>

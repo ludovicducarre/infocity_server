@@ -9,15 +9,9 @@
         <!--Advert : <h:outputLabel value="#{advertManager.printAdvert()}"/>-->
         <p/>
         <div align="center">
-            <p:orderList value="#{mainPage.adverts}" var="advert" controlsLocation="none" itemValue="#{advert}" itemLabel="#{advert.title}">
-                <p:ajax event="select" listener="#{mainPage.onSelect}"/>
-            </p:orderList>
-            <p/>
-            <h:form>
-                <p:commandButton ajax="false" value="Nouvelle annonce" icon="ui-icon-plus"
-                                 action="#{mainPage.createAdvert}"/>
-            </h:form>
+            <p:chart type="bar" model="#{stats.barModel}" style="height:300px"/>
         </div>
+
 
     </ui:define>
 

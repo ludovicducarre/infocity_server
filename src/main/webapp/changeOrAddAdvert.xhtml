@@ -4,30 +4,66 @@
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:f="http://java.sun.com/jsf/core"
                 template="/templates/mainTemplate.xhtml"
-        >
+>
 
     <ui:define name="bodyContent">
 
         <h:form id="formulaire">
 
             <fieldset>
-                <legend>Changement de message</legend>
-                <h:outputLabel for="newTitle">Nouveau Titre</h:outputLabel>
-                <p:inputText id="newTitle"
-                             label="Titile"
-                             value="#{advertManager.newTitle}"
-                             required="true"
-                             requiredMessage="Veuillez saisir un titre"
-                             size="20"
-                             maxlength="60">
-                    <f:validateLength minimum="2" maximum="10" />
+                <legend>Modification de l'événement</legend>
+                <div align="center">
+                <h:outputLabel for="newTitle" >Titre : </h:outputLabel>
+                <p:inputText id="newTitle" label="Titre" value="#{changeOrAddAdvert.title}" required="true"
+                             requiredMessage="Veuillez saisir un titre" size="20" maxlength="60">
+                    <f:validateLength minimum="2" maximum="30" />
                     <f:ajax event="blur" render="newMessageError" />
                 </p:inputText>
+                <p/>
+
+                <h:outputLabel for="newType">Type : </h:outputLabel>
+                <p:inputText id="newType" label="Type" value="#{changeOrAddAdvert.type}" required="true"
+                             requiredMessage="Veuillez saisir un type" size="20" maxlength="60">
+                    <f:validateLength minimum="2" maximum="15" />
+                    <f:ajax event="blur" render="newMessageError" />
+                </p:inputText>
+                <p/>
+
+                <h:outputLabel for="newDate">Date : </h:outputLabel>
+                <p:calendar id="newDate" label="Date" value="#{changeOrAddAdvert.date}" required="true"
+                             requiredMessage="Veuillez saisir une date" size="20" maxlength="60" pattern="MM/dd/yyyy HH:mm">
+                    <f:ajax event="blur" render="newMessageError" />
+                </p:calendar>
+                <p/>
+
+                <h:outputLabel for="newLocation">Lieu : </h:outputLabel>
+                <p:inputText id="newLocation" label="Lieu" value="#{changeOrAddAdvert.location}" required="true"
+                             requiredMessage="Veuillez saisir un lieu" size="20" maxlength="60">
+                    <f:validateLength minimum="2" maximum="30" />
+                    <f:ajax event="blur" render="newMessageError" />
+                </p:inputText>
+                <p/>
+
+                <h:outputLabel for="newMessage">Message : </h:outputLabel>
+                <p>
+                <p:inputTextarea id="newMessage" label="Message" value="#{changeOrAddAdvert.message}" required="true"
+                             requiredMessage="Veuillez saisir un message" rows="7" cols="20" maxlength="140">
+                    <f:validateLength minimum="2" maximum="140" />
+                    <f:ajax event="blur" render="newMessageError" />
+                </p:inputTextarea>
+                </p>
+
                 <h:message id="newMessageError" for="newTitle"/>
+                </div>
             </fieldset>
             <br/>
             <br/>
-            <p:commandButton ajax="false" value="valide titre" action="#{advertManager.setAdvertTitle}"/>
+            <div align="center">
+            <p:commandButton ajax="false" value="valider annonce" action="#{changeOrAddAdvert.validate}"/>
+            </div>
+            <div align="center">
+                <p:commandButton ajax="false" value="supprimer annonce" action="#{changeOrAddAdvert.delete}"/>
+            </div>
         </h:form>
     </ui:define>
 
